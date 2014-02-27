@@ -70,6 +70,7 @@ JSON object of the visualCaptcha options can contain next parameters:
     - `numberOfImages` (default: `6`) — number of generated images for visualCaptcha;
     - `namespaceFieldName` (default: `'namespace'`) — the name of the parameter sent to the server for the namespace;
     — `namespace` — the value of the parameter sent to the server for the namespace, if it's not setted up, no namespace will be sent;
+    - `randomParam` (default: `'r'`) — name of random value parameter which is for disable the cache;
     - `routes` — object with next endpoint routes:
         - `start` (default: `'/start'`) — route to generate common data (image field name, image name, image values and audio field name);
         - `image` (default: `'/image'`) — route to get generated image file by index;
