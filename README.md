@@ -28,7 +28,7 @@ bower install visualcaptcha.jquery
     <div id="sample-captcha"></div>
     ```
 
-3. Initialize captcha with the `$( element ).visualCaptcha( options )` jQuery function that returns _jQuery object_ within the _visualCaptcha object_. It use two parameters: `element` is a selector of a container for the visualCaptcha, `options` is a JSON object of the visualCaptcha options:
+3. Initialize the captcha with the `$( element ).visualCaptcha( options )` jQuery function that returns a _jQuery object_ within the _visualCaptcha object_. It uses two parameters: `element` is a selector of a container for the visualCaptcha, `options` is an object of the visualCaptcha options:
 
     ```javascript
     var el = $( '#sample-captcha' ).visualCaptcha( {
@@ -36,21 +36,21 @@ bower install visualcaptcha.jquery
         captcha: { numberOfImages: 5 }
     } );
 
-    // use next code for getting captcha object
+    // use the following code to get the captcha object
     var capthca = el.data( 'captcha' );
     ```
 
-### VisualCaptcha options
+### visualCaptcha options
 
-JSON object of the visualCaptcha options can contain next parameters:
+JavaScript object, it can contain the following parameters:
 
-- `imgPath` (default: `'/'`) — path to the next interface icons:
+- `imgPath` (default: `'/'`) — path to the following interface images/icons:
     - `accessibility.png`,
     - `accessibility@2x.png`,
     - `refresh.png`,
     - `refresh@2x.png`;
 
-- `language` — object of the text values using for localization the visualCaptcha interface, default:
+- `language` — object of the string values used for localization of the visualCaptcha UI, default:
     ```
     {
         accessibilityAlt: 'Sound icon',
@@ -62,12 +62,11 @@ JSON object of the visualCaptcha options can contain next parameters:
     }
     ```
 
-- `captcha` — object of the visualCaptcha core options :
-    - `request` (default: `xhrRequest`) — function for sending request;
+- `captcha` — object of the visualCaptcha core options:
+    - `request` (default: `xhrRequest`) — function for making the XHR/AJAX request;
     - `url` (default: `'http://localhost:8282'`) — url for back-end;
-    <!-- !FIXME - `path` (default: `''`) — is the url prefix; -->
-    <!-- !FIXME - `autoRefresh` (default: `true`) — if it is `true` it will load the data when it's constructed; -->
-    - `numberOfImages` (default: `6`) — number of generated images for visualCaptcha;
+    - `autoRefresh` (default: `true`) — if it is `true` it will load the data when it's constructed;
+    - `numberOfImages` (default: `6`) — number of images to show;
     - `namespaceFieldName` (default: `'namespace'`) — the name of the parameter sent to the server for the namespace;
     — `namespace` — the value of the parameter sent to the server for the namespace, if it's not setted up, no namespace will be sent;
     - `randomParam` (default: `'r'`) — name of random value parameter which is for disable the cache;
@@ -76,9 +75,9 @@ JSON object of the visualCaptcha options can contain next parameters:
         - `image` (default: `'/image'`) — route to get generated image file by index;
         - `audio` (default: `'/audio'`) — route to get generated audio file.
 
-### VisualCaptcha object methods
+### visualCaptcha object methods
 
-All next methods are available from _VisualCaptcha object_ that will be returned by `$( element ).visualCaptcha( options ).data( 'captcha' )` funciton (as it was described above, in “Initialization”, step 3).
+All the following methods are available from the _visualCaptcha object_ that will be returned by `$( element ).visualCaptcha( options ).data( 'captcha' )` function (as it was described above, in “Initialization”, step 3).
 
 - `audioFieldName()` — returns field name of accessibility (audio) captcha;
 - `audioUrl()` — returns URL of audio file;
@@ -126,7 +125,32 @@ $('.captcha').visualCaptcha({
 
 Such configuration will create a hidden field in each form with a captcha
 with the field name of `namespaceFieldName` and the field value of `namespace`
-for initialize multiple captchas.
+for initializing multiple captchas.
+
+### Localization
+
+When initializing visualCaptcha, send a `language` object. For example:
+
+```javascript
+// Object with localized strings
+var portugueseTexts = {
+    accessibilityAlt: 'Ícone de Som',
+    accessibilityTitle: 'Opção de Acessibilidade: ouça uma questão e responda à mesma!',
+    accessibilityDescription: 'Escreva em baixo a <strong>resposta</strong> ao que ouve. Números ou palavras:',
+    explanation: 'Clique ou toque no/a <strong>ANSWER</strong>',
+    refreshAlt: 'Ícone de Refrescar/recarregar',
+    refreshTitle: 'Refrescar/recarregar: obtenha novas imagens e opção de acessibilidade!'
+};
+
+var el = $( '#sample-captcha' ).visualCaptcha( {
+    imgPath: 'img/',
+    captcha: { numberOfImages: 5 },
+    language: portugueseTexts
+} );
+
+// use the following code to get the captcha object
+var captcha = el.data( 'captcha' );
+```
 
 ## License
 
