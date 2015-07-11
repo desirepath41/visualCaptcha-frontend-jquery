@@ -20,7 +20,7 @@ bower install visualcaptcha.jquery
 
 ## Sample
 
-[View sample usage in the node demo](https://github.com/emotionLoop/visualCaptcha-node/blob/master/public/js/main.js)
+[View sample usage in the PHP demo](https://github.com/emotionLoop/visualCaptcha-PHP/blob/master/public/js/main.js)
 
 
 ## License
