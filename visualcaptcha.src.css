@@ -1,4 +1,4 @@
-/*! visualCaptcha - v0.0.6 - 2015-07-11
+/*! visualCaptcha - v0.0.7 - 2015-07-13
 * http://visualcaptcha.net
 * Copyright (c) 2015 emotionLoop; Licensed MIT */
 
@@ -93,27 +93,11 @@
   }
 }
 .visualCaptcha-possibilities img {
-  /*
-    max-width: 58px;
-    max-height: 58px; 
-    */
   width: 32px;
   height: 32px;
   z-index: 5;
   transition: all 200ms;
   -webkit-transition: all 200ms;
-  /* RetinaRes -------- 
-    @media
-    only screen and (min--moz-device-pixel-ratio: 1.5),
-    only screen and (-o-min-device-pixel-ratio: 3/2),
-    only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min-device-pixel-ratio: 1.5),
-    only screen and (min-resolution: 1.5dppx) { 
-      max-width: 42px;
-      max-height: 42px; 
-      background:red; 
-    }
-    */
 }
 .visualCaptcha-possibilities img:hover {
   cursor: pointer;
