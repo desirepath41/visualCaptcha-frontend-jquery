@@ -1,6 +1,6 @@
-/*! visualCaptcha - v0.0.7 - 2015-07-13
+/*! visualCaptcha - v0.0.8 - 2016-01-23
 * http://visualcaptcha.net
-* Copyright (c) 2015 emotionLoop; Licensed MIT */
+* Copyright (c) 2016 emotionLoop; Licensed MIT */
 
 /**
  * @license almond 0.2.9 Copyright (c) 2011-2014, The Dojo Foundation All Rights Reserved.
